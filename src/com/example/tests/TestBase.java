@@ -88,10 +88,10 @@ public class TestBase {
 	    driver.findElement(By.name("email")).sendKeys(contact.email);
 	    driver.findElement(By.name("email2")).clear();
 	    driver.findElement(By.name("email2")).sendKeys(contact.email2);
-	    new Select(driver.findElement(By.name("bday"))).selectByVisibleText(contact.bday);
-	    new Select(driver.findElement(By.name("bmonth"))).selectByVisibleText(contact.bmonth);
+	    new Select(driver.findElement(By.name("bday"))).selectByVisibleText(contact.birthDay);
+	    new Select(driver.findElement(By.name("bmonth"))).selectByVisibleText(contact.birthMonth);
 	    driver.findElement(By.name("byear")).clear();
-	    driver.findElement(By.name("byear")).sendKeys(contact.byear);
+	    driver.findElement(By.name("byear")).sendKeys(contact.birthYear);
 	    new Select(driver.findElement(By.name("new_group"))).selectByVisibleText(contact.newgroup);
 	    driver.findElement(By.name("address2")).clear();
 	    driver.findElement(By.name("address2")).sendKeys(contact.address2);

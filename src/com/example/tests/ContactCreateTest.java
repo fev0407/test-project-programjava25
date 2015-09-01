@@ -16,9 +16,9 @@ public class ContactCreateTest extends TestBase {
     contact.workphone = "333-33-33";
     contact.email = "Alena.Ivanova@gmail.com";
     contact.email2 = "Elena.Ivanova@gmail.com";
-    contact.bday = "1";
-    contact.bmonth = "January";
-    contact.byear = "1999";
+    contact.birthDay = "1";
+    contact.birthMonth = "January";
+    contact.birthYear = "1999";
     contact.newgroup = "my first group";
     contact.address2 = "Rostov Lenina 15-1";
     contact.phone2 = "11-11-11";
@@ -31,22 +31,7 @@ public class ContactCreateTest extends TestBase {
   public void testEmptyContactCreate() throws Exception {
     openMainPage();
     gotoContact();
-    ContactData contact = new ContactData();
-    contact.firstname = "";
-    contact.lastname = "";
-    contact.address = "";
-    contact.homephone = "";
-    contact.mobilephone = "";
-    contact.workphone = "";
-    contact.email = "";
-    contact.email2 = "";
-    contact.bday = "-";
-    contact.bmonth = "-";
-    contact.byear = "-";
-    contact.newgroup = "";
-    contact.address2 = "";
-    contact.phone2 = "";
-	fillContactForm(contact);
+    fillContactForm(new ContactData("", "", "", "", "", "", "", "", "-", "-", "-", "", "", ""));
     submitContact();
     returnHomePage();
   }
