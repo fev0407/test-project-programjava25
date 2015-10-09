@@ -5,8 +5,8 @@ import org.testng.annotations.Test;
 public class ContactCreateTest extends TestBase {
   @Test
   public void testNonEmptyContactCreate() throws Exception {
-    app.navigationHelper.openMainPage();
-    app.contactHelper.gotoContact();
+    app.getNavigationHelper().openMainPage();
+    app.getContactHelper().gotoContact();
     ContactData contact = new ContactData();
     contact.firstname = "Alena";
     contact.lastname = "Ivanova";
@@ -22,18 +22,18 @@ public class ContactCreateTest extends TestBase {
     contact.newgroup = "my first group";
     contact.address2 = "Rostov Lenina 15-1";
     contact.phone2 = "11-11-11";
-	app.contactHelper.fillContactForm(contact);
-    app.contactHelper.submitContact();
-    app.contactHelper.returnHomePage();
+	app.getContactHelper().fillContactForm(contact);
+    app.getContactHelper().submitContact();
+    app.getContactHelper().returnHomePage();
   }
   
   @Test
   public void testEmptyContactCreate() throws Exception {
-    app.navigationHelper.openMainPage();
-    app.contactHelper.gotoContact();
-    app.contactHelper.fillContactForm(new ContactData("", "", "", "", "", "", "", "", "-", "-", "-", "", "", ""));
-    app.contactHelper.submitContact();
-    app.contactHelper.returnHomePage();
+    app.getNavigationHelper().openMainPage();
+    app.getContactHelper().gotoContact();
+    app.getContactHelper().fillContactForm(new ContactData("", "", "", "", "", "", "", "", "-", "-", "-", "", "", ""));
+    app.getContactHelper().submitContact();
+    app.getContactHelper().returnHomePage();
   }
 
 }
